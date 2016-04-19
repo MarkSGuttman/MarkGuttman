@@ -4,7 +4,7 @@
     //});
 
     var webapiApp = angular.module('webapi', ['ngResource']);
-    
+
     webapiApp.factory('WebApiFactory', ['$resource', WebApiFactory]);
 
     function WebApiFactory($resource) {
@@ -25,13 +25,43 @@
         }
     }
 
-    var app = angular.module('coinApp', ['ngMaterial', 'ngResource', 'nvd3', 'webapi']);
+    var app = angular.module('coinApp', ['ngMaterial', 'ui.router', 'ngResource', 'nvd3', 'webapi']);
+    app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.otherwise('/home');
+
+        var mainState = {
+            controller: 'AppCtrl'
+        };
+
+        var homeState = {
+            url: '/home',
+            templateUrl: '/App/Views/home.html',
+            controller: 'HomeController'
+        };
+
+        var changeState = {
+            url: '/change',
+            templateUrl: '/App/Views/change.html',
+            controller: 'ChangeController'
+        };
+
+        $stateProvider.state('main', mainState)
+            .state("main.home", homeState)
+        .state("main..change", changeState);
+    }]);
 
     app.controller('TitleController', TitleController);
 
     app.controller('FooterController', FooterController)
 
-    app.controller('AppCtrl', AppCtrl).factory('ChangeFactory', ['WebApiFactory', ChangeFactory]).directive('resize', reSize).directive('bar', bar);
+    app.controller('HomeController', HomeController);
+
+    app.controller('ChangeController', ['$scope', 'ChangeFactory', '$timeout', ChangeController]);
+
+    app.controller('AppCtrl', AppCtrl)
+        .factory('ChangeFactory', ['WebApiFactory', ChangeFactory])
+        .directive('resize', reSize)
+        .directive('bar', bar);
 
     var Coin = function (coin) {
         if (!coin) { coin = {}; }
@@ -46,6 +76,10 @@
 
     function TitleController($scope) {
         $scope.title = 'Mark Guttman';
+    }
+
+    function HomeController($scope) {
+        $scope.title = 'Welcome'
     }
 
     function ChangeFactory(WebApiFactory) {
@@ -90,7 +124,7 @@
         return changeService;
     }
 
-    function AppCtrl($scope, ChangeFactory, $timeout) {
+    function ChangeController($scope, ChangeFactory, $timeout) {
         $scope.dataTwo = [];
 
         $scope.data = [{
@@ -119,6 +153,10 @@
         }
 
         $timeout(init(), 30000);
+    }
+
+    function AppCtrl($scope, ChangeFactory, $timeout) {
+
     }
 
     function FooterController($scope) {

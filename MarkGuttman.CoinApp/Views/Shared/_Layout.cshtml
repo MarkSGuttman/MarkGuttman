@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>Comve on over and do the twist - Over Do It and Have a FIT</title>
+    <meta name="keywords" content="Mark Guttman, Software Developer, Software Engineer, .NET Engineer, Chicago, Enterprise Application Architecture and Design, Enterprise Application Development, responsive client design and development, angularjs, data visualizations, html5 charting" />
+    <title>Come on over and do the twist - Over Do It and Have a FIT</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -58,33 +59,35 @@
 </head>
 <body @*style="height:100%!important"*@ ng-app="coinApp">
     <div class="toolbardemoScrollShrink" ng-controller="AppCtrl" layout="column" layout-fill ng-cloak>
-        <md-toolbar flex @*md-scroll-shrink ng-if="true"*@ ng-controller="TitleController">
-            <div class="md-toolbar-tools">
-                <md-button class="md-icon-button" aria-label="Settings">
-                    @*<md-icon md-svg-icon="img/icons/menu.svg"></md-icon>*@
-                </md-button>
-                <h3>
-                    <span>{{title}}</span>
-                </h3>
-            </div>
-        </md-toolbar>
+        <div ui-view>
+            <md-toolbar flex @*md-scroll-shrink ng-if="true"*@ ng-controller="TitleController">
+                <div class="md-toolbar-tools">
+                    <md-button class="md-icon-button" aria-label="Settings">
+                        @*<md-icon md-svg-icon="img/icons/menu.svg"></md-icon>*@
+                    </md-button>
+                    <h3>
+                        <span>{{title}}</span>
+                    </h3>
+                </div>
+            </md-toolbar>
 
-        <md-content flex="75">
-            @*style="height: 900px"*@
-            @RenderBody()
-        </md-content>
+            <md-content flex="75">
+                @*style="height: 900px"*@
+                @RenderBody()
+            </md-content>
 
-        <md-card ng-controller="FooterController" flex layout-fill layout-padding layout="column" layout-wrap layout-align="center center">
-            <md-input-container>
-                <md-button class="md-warn md-raised">submit</md-button>
-            </md-input-container>
-            <div style="margin-top: 1%;">
+            <md-card ng-controller="FooterController" flex layout-fill layout-padding layout="column" layout-wrap layout-align="center center">
                 <md-input-container>
-                    <label>Change Ammount</label>
-                    <input type="number" step="0.01" ng-model="changeAmmount">
+                    <md-button class="md-warn md-raised">submit</md-button>
                 </md-input-container>
-            </div>
-        </md-card>
+                <div style="margin-top: 1%;">
+                    <md-input-container>
+                        <label>Change Ammount</label>
+                        <input type="number" step="0.01" ng-model="changeAmmount">
+                    </md-input-container>
+                </div>
+            </md-card>
+        </div>
     </div>
 
     @*@Scripts.Render("~/bundles/jquery")*@

@@ -26,6 +26,7 @@ namespace MarkGuttman.CoinApp
                 "~/node-modules/angular-messages/angular-messages.js",
                 "~/node_modules/angular-material/angular-material.js",
                  "~/node_modules/angular-route/angular-route.js",
+                 "~/node_modules/angular-ui-router/release/angular-ui-router.js",
                 "~/node_modules/angular-resource/angular-resource.js"
                 ));
 

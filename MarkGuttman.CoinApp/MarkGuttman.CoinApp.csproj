@@ -158,25 +158,20 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\ChangeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Implementation\CoinBase.cs" />
     <Compile Include="Interfaces\ICoin.cs" />
-    <Compile Include="Models\Change.cs" />
-    <Compile Include="Models\Dime.cs" />
-    <Compile Include="Models\HalfDollar.cs" />
-    <Compile Include="Models\Nickel.cs" />
-    <Compile Include="Models\Penny.cs" />
-    <Compile Include="Models\Quarter.cs" />
     <Compile Include="Models\SilverDollar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\Controllers\AppCtrl.js" />
     <Content Include="App\CoinApp.js" />
+    <Content Include="App\Views\change.html" />
+    <Content Include="App\Views\home.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -672,6 +667,19 @@
     <Content Include="node_modules\angular-route\angular-route.js" />
     <Content Include="node_modules\angular-route\angular-route.min.js" />
     <Content Include="node_modules\angular-route\index.js" />
+    <Content Include="node_modules\angular-ui-router\release\angular-ui-router.js" />
+    <Content Include="node_modules\angular-ui-router\release\angular-ui-router.min.js" />
+    <Content Include="node_modules\angular-ui-router\src\common.js" />
+    <Content Include="node_modules\angular-ui-router\src\resolve.js" />
+    <Content Include="node_modules\angular-ui-router\src\state.js" />
+    <Content Include="node_modules\angular-ui-router\src\stateDirectives.js" />
+    <Content Include="node_modules\angular-ui-router\src\stateFilters.js" />
+    <Content Include="node_modules\angular-ui-router\src\templateFactory.js" />
+    <Content Include="node_modules\angular-ui-router\src\urlMatcherFactory.js" />
+    <Content Include="node_modules\angular-ui-router\src\urlRouter.js" />
+    <Content Include="node_modules\angular-ui-router\src\view.js" />
+    <Content Include="node_modules\angular-ui-router\src\viewDirective.js" />
+    <Content Include="node_modules\angular-ui-router\src\viewScroll.js" />
     <Content Include="node_modules\angularjs\index.js" />
     <Content Include="node_modules\angular\angular-csp.css" />
     <Content Include="node_modules\angular\angular.js" />
@@ -1259,7 +1267,14 @@
     <Content Include="node_modules\angular-resource\bower.json" />
     <Content Include="node_modules\angular-resource\package.json" />
     <Content Include="node_modules\angular-resource\README.md" />
-    <None Include="Properties\PublishProfiles\MarkGuttman.pubxml" />
+    <Content Include="node_modules\angular-ui-router\CHANGELOG.md" />
+    <Content Include="node_modules\angular-ui-router\CONTRIBUTING.md" />
+    <Content Include="node_modules\angular-ui-router\LICENSE" />
+    <Content Include="node_modules\angular-ui-router\package.json" />
+    <Content Include="node_modules\angular-ui-router\README.md" />
+    <Content Include="node_modules\angular-ui-router\ui-router2.iml" />
+    <Content Include="node_modules\angular-ui-router\ui-router2.ipr" />
+    <Content Include="node_modules\angular-ui-router\ui-router2.iws" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
