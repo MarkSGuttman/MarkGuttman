@@ -1,0 +1,1344 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{40E1513B-0019-4016-9CDE-5A3F709F47CC}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MarkGuttman.CoinApp</RootNamespace>
+    <AssemblyName>MarkGuttman.CoinApp</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.1.2.3\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.1.2.3\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.1.2.3\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.1.2.3\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.1.2.3\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=1.2.3.490, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.1.2.3\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ChangeController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Implementation\CoinBase.cs" />
+    <Compile Include="Interfaces\ICoin.cs" />
+    <Compile Include="Models\Change.cs" />
+    <Compile Include="Models\Dime.cs" />
+    <Compile Include="Models\HalfDollar.cs" />
+    <Compile Include="Models\Nickel.cs" />
+    <Compile Include="Models\Penny.cs" />
+    <Compile Include="Models\Quarter.cs" />
+    <Compile Include="Models\SilverDollar.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App\Controllers\AppCtrl.js" />
+    <Content Include="App\CoinApp.js" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="node_modules\angular-animate\angular-animate.js" />
+    <Content Include="node_modules\angular-animate\angular-animate.min.js" />
+    <Content Include="node_modules\angular-animate\index.js" />
+    <Content Include="node_modules\angular-aria\angular-aria.js" />
+    <Content Include="node_modules\angular-aria\angular-aria.min.js" />
+    <Content Include="node_modules\angular-aria\index.js" />
+    <Content Include="node_modules\angular-material\angular-material-mocks.js" />
+    <Content Include="node_modules\angular-material\angular-material.css" />
+    <Content Include="node_modules\angular-material\angular-material.js" />
+    <Content Include="node_modules\angular-material\angular-material.min.css" />
+    <Content Include="node_modules\angular-material\angular-material.min.js" />
+    <Content Include="node_modules\angular-material\core\services\layout\ie_fixes.css" />
+    <Content Include="node_modules\angular-material\core\services\layout\ie_fixes.min.css" />
+    <Content Include="node_modules\angular-material\demos\bottomSheet\demoBasicUsage\img\icons\copy.svg" />
+    <Content Include="node_modules\angular-material\demos\bottomSheet\demoBasicUsage\img\icons\copy2.svg" />
+    <Content Include="node_modules\angular-material\demos\bottomSheet\demoBasicUsage\img\icons\facebook.svg" />
+    <Content Include="node_modules\angular-material\demos\bottomSheet\demoBasicUsage\img\icons\hangout.svg" />
+    <Content Include="node_modules\angular-material\demos\bottomSheet\demoBasicUsage\img\icons\mail.svg" />
+    <Content Include="node_modules\angular-material\demos\bottomSheet\demoBasicUsage\img\icons\message.svg" />
+    <Content Include="node_modules\angular-material\demos\bottomSheet\demoBasicUsage\img\icons\print.svg" />
+    <Content Include="node_modules\angular-material\demos\bottomSheet\demoBasicUsage\img\icons\share-arrow.svg" />
+    <Content Include="node_modules\angular-material\demos\bottomSheet\demoBasicUsage\img\icons\twitter.svg" />
+    <Content Include="node_modules\angular-material\demos\bottomSheet\demoBasicUsage\img\icons\upload.svg" />
+    <Content Include="node_modules\angular-material\demos\icon\demoLoadSvgIconsFromUrl\img\icons\addShoppingCart.svg" />
+    <Content Include="node_modules\angular-material\demos\icon\demoLoadSvgIconsFromUrl\img\icons\android.svg" />
+    <Content Include="node_modules\angular-material\demos\icon\demoLoadSvgIconsFromUrl\img\icons\cake.svg" />
+    <Content Include="node_modules\angular-material\demos\icon\demoSvgIconSets\assets\cake.svg" />
+    <Content Include="node_modules\angular-material\demos\icon\demoSvgIconSets\assets\core-icons.svg" />
+    <Content Include="node_modules\angular-material\demos\icon\demoSvgIconSets\assets\social-icons.svg" />
+    <Content Include="node_modules\angular-material\demos\icon\demoSvgIconsFromURL\img\icons\addShoppingCart.svg" />
+    <Content Include="node_modules\angular-material\demos\icon\demoSvgIconsFromURL\img\icons\android.svg" />
+    <Content Include="node_modules\angular-material\demos\icon\demoSvgIconsFromURL\img\icons\cake.svg" />
+    <Content Include="node_modules\angular-material\demos\icon\demoUsingTemplateCache\assets\android.svg" />
+    <Content Include="node_modules\angular-material\demos\icon\demoUsingTemplateCache\assets\cake.svg" />
+    <Content Include="node_modules\angular-material\demos\icon\demoUsingTemplateCache\assets\core-icons.svg" />
+    <Content Include="node_modules\angular-material\demos\input\demoIcons\icons\ic_email_24px.svg" />
+    <Content Include="node_modules\angular-material\demos\input\demoIcons\icons\ic_person_24px.svg" />
+    <Content Include="node_modules\angular-material\demos\input\demoIcons\icons\ic_phone_24px.svg" />
+    <Content Include="node_modules\angular-material\demos\input\demoIcons\icons\ic_place_24px.svg" />
+    <Content Include="node_modules\angular-material\demos\list\demoListControls\img\100-0.jpeg" />
+    <Content Include="node_modules\angular-material\demos\list\demoListControls\img\100-1.jpeg" />
+    <Content Include="node_modules\angular-material\demos\list\demoListControls\img\100-2.jpeg" />
+    <Content Include="node_modules\angular-material\demos\toolbar\demoBasicUsage\img\icons\favorite.svg" />
+    <Content Include="node_modules\angular-material\demos\toolbar\demoBasicUsage\img\icons\menu.svg" />
+    <Content Include="node_modules\angular-material\demos\toolbar\demoBasicUsage\img\icons\more_vert.svg" />
+    <Content Include="node_modules\angular-material\index.js" />
+    <Content Include="node_modules\angular-material\layouts\angular-material.layout-attributes.css" />
+    <Content Include="node_modules\angular-material\layouts\angular-material.layout-attributes.min.css" />
+    <Content Include="node_modules\angular-material\layouts\angular-material.layouts.css" />
+    <Content Include="node_modules\angular-material\layouts\angular-material.layouts.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\autocomplete\autocomplete-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\closure\autocomplete\autocomplete-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\autocomplete\autocomplete.css" />
+    <Content Include="node_modules\angular-material\modules\closure\autocomplete\autocomplete.js" />
+    <Content Include="node_modules\angular-material\modules\closure\autocomplete\autocomplete.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\autocomplete\autocomplete.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\backdrop\backdrop-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\closure\backdrop\backdrop-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\backdrop\backdrop.css" />
+    <Content Include="node_modules\angular-material\modules\closure\backdrop\backdrop.js" />
+    <Content Include="node_modules\angular-material\modules\closure\backdrop\backdrop.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\backdrop\backdrop.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\bottomSheet\bottomSheet-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\closure\bottomSheet\bottomSheet-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\bottomSheet\bottomSheet.css" />
+    <Content Include="node_modules\angular-material\modules\closure\bottomSheet\bottomSheet.js" />
+    <Content Include="node_modules\angular-material\modules\closure\bottomSheet\bottomSheet.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\bottomSheet\bottomSheet.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\button\button-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\closure\button\button-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\button\button.css" />
+    <Content Include="node_modules\angular-material\modules\closure\button\button.js" />
+    <Content Include="node_modules\angular-material\modules\closure\button\button.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\button\button.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\card\card-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\closure\card\card-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\card\card.css" />
+    <Content Include="node_modules\angular-material\modules\closure\card\card.js" />
+    <Content Include="node_modules\angular-material\modules\closure\card\card.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\card\card.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\checkbox\checkbox-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\closure\checkbox\checkbox-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\checkbox\checkbox.css" />
+    <Content Include="node_modules\angular-material\modules\closure\checkbox\checkbox.js" />
+    <Content Include="node_modules\angular-material\modules\closure\checkbox\checkbox.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\checkbox\checkbox.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\chips\chips-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\closure\chips\chips-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\chips\chips.css" />
+    <Content Include="node_modules\angular-material\modules\closure\chips\chips.js" />
+    <Content Include="node_modules\angular-material\modules\closure\chips\chips.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\chips\chips.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\content\content-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\closure\content\content-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\content\content.css" />
+    <Content Include="node_modules\angular-material\modules\closure\content\content.js" />
+    <Content Include="node_modules\angular-material\modules\closure\content\content.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\content\content.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\core\core.css" />
+    <Content Include="node_modules\angular-material\modules\closure\core\core.js" />
+    <Content Include="node_modules\angular-material\modules\closure\core\core.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\core\core.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\core\default-theme.js" />
+    <Content Include="node_modules\angular-material\modules\closure\datepicker\datepicker-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\closure\datepicker\datepicker-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\datepicker\datepicker.css" />
+    <Content Include="node_modules\angular-material\modules\closure\datepicker\datepicker.js" />
+    <Content Include="node_modules\angular-material\modules\closure\datepicker\datepicker.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\datepicker\datepicker.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\dialog\dialog-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\closure\dialog\dialog-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\dialog\dialog.css" />
+    <Content Include="node_modules\angular-material\modules\closure\dialog\dialog.js" />
+    <Content Include="node_modules\angular-material\modules\closure\dialog\dialog.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\dialog\dialog.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\divider\divider-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\closure\divider\divider-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\divider\divider.css" />
+    <Content Include="node_modules\angular-material\modules\closure\divider\divider.js" />
+    <Content Include="node_modules\angular-material\modules\closure\divider\divider.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\divider\divider.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\fabActions\fabActions.js" />
+    <Content Include="node_modules\angular-material\modules\closure\fabActions\fabActions.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\fabSpeedDial\fabSpeedDial.css" />
+    <Content Include="node_modules\angular-material\modules\closure\fabSpeedDial\fabSpeedDial.js" />
+    <Content Include="node_modules\angular-material\modules\closure\fabSpeedDial\fabSpeedDial.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\fabSpeedDial\fabSpeedDial.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\fabToolbar\fabToolbar.css" />
+    <Content Include="node_modules\angular-material\modules\closure\fabToolbar\fabToolbar.js" />
+    <Content Include="node_modules\angular-material\modules\closure\fabToolbar\fabToolbar.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\fabToolbar\fabToolbar.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\fabTrigger\fabTrigger.js" />
+    <Content Include="node_modules\angular-material\modules\closure\fabTrigger\fabTrigger.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\gridList\gridList-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\closure\gridList\gridList.css" />
+    <Content Include="node_modules\angular-material\modules\closure\gridList\gridList.js" />
+    <Content Include="node_modules\angular-material\modules\closure\gridList\gridList.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\gridList\gridList.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\icon\icon-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\closure\icon\icon-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\icon\icon.css" />
+    <Content Include="node_modules\angular-material\modules\closure\icon\icon.js" />
+    <Content Include="node_modules\angular-material\modules\closure\icon\icon.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\icon\icon.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\input\input-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\closure\input\input-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\input\input.css" />
+    <Content Include="node_modules\angular-material\modules\closure\input\input.js" />
+    <Content Include="node_modules\angular-material\modules\closure\input\input.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\input\input.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\list\list-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\closure\list\list-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\list\list.css" />
+    <Content Include="node_modules\angular-material\modules\closure\list\list.js" />
+    <Content Include="node_modules\angular-material\modules\closure\list\list.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\list\list.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\menuBar\menuBar-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\closure\menuBar\menuBar-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\menuBar\menuBar.css" />
+    <Content Include="node_modules\angular-material\modules\closure\menuBar\menuBar.js" />
+    <Content Include="node_modules\angular-material\modules\closure\menuBar\menuBar.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\menuBar\menuBar.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\menu\menu-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\closure\menu\menu-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\menu\menu.css" />
+    <Content Include="node_modules\angular-material\modules\closure\menu\menu.js" />
+    <Content Include="node_modules\angular-material\modules\closure\menu\menu.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\menu\menu.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\progressCircular\progressCircular-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\closure\progressCircular\progressCircular-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\progressCircular\progressCircular.css" />
+    <Content Include="node_modules\angular-material\modules\closure\progressCircular\progressCircular.js" />
+    <Content Include="node_modules\angular-material\modules\closure\progressCircular\progressCircular.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\progressCircular\progressCircular.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\progressLinear\progressLinear-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\closure\progressLinear\progressLinear-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\progressLinear\progressLinear.css" />
+    <Content Include="node_modules\angular-material\modules\closure\progressLinear\progressLinear.js" />
+    <Content Include="node_modules\angular-material\modules\closure\progressLinear\progressLinear.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\progressLinear\progressLinear.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\radioButton\radioButton-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\closure\radioButton\radioButton-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\radioButton\radioButton.css" />
+    <Content Include="node_modules\angular-material\modules\closure\radioButton\radioButton.js" />
+    <Content Include="node_modules\angular-material\modules\closure\radioButton\radioButton.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\radioButton\radioButton.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\select\select-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\closure\select\select-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\select\select.css" />
+    <Content Include="node_modules\angular-material\modules\closure\select\select.js" />
+    <Content Include="node_modules\angular-material\modules\closure\select\select.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\select\select.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\showHide\showHide.js" />
+    <Content Include="node_modules\angular-material\modules\closure\showHide\showHide.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\sidenav\sidenav-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\closure\sidenav\sidenav-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\sidenav\sidenav.css" />
+    <Content Include="node_modules\angular-material\modules\closure\sidenav\sidenav.js" />
+    <Content Include="node_modules\angular-material\modules\closure\sidenav\sidenav.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\sidenav\sidenav.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\slider\slider-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\closure\slider\slider-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\slider\slider.css" />
+    <Content Include="node_modules\angular-material\modules\closure\slider\slider.js" />
+    <Content Include="node_modules\angular-material\modules\closure\slider\slider.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\slider\slider.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\sticky\sticky.css" />
+    <Content Include="node_modules\angular-material\modules\closure\sticky\sticky.js" />
+    <Content Include="node_modules\angular-material\modules\closure\sticky\sticky.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\sticky\sticky.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\subheader\subheader-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\closure\subheader\subheader-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\subheader\subheader.css" />
+    <Content Include="node_modules\angular-material\modules\closure\subheader\subheader.js" />
+    <Content Include="node_modules\angular-material\modules\closure\subheader\subheader.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\subheader\subheader.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\swipe\swipe.js" />
+    <Content Include="node_modules\angular-material\modules\closure\swipe\swipe.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\switch\switch-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\closure\switch\switch-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\switch\switch.css" />
+    <Content Include="node_modules\angular-material\modules\closure\switch\switch.js" />
+    <Content Include="node_modules\angular-material\modules\closure\switch\switch.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\switch\switch.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\tabs\tabs-arrow.svg" />
+    <Content Include="node_modules\angular-material\modules\closure\tabs\tabs-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\closure\tabs\tabs-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\tabs\tabs.css" />
+    <Content Include="node_modules\angular-material\modules\closure\tabs\tabs.js" />
+    <Content Include="node_modules\angular-material\modules\closure\tabs\tabs.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\tabs\tabs.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\textField\textField-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\closure\textField\textField.css" />
+    <Content Include="node_modules\angular-material\modules\closure\textField\textField.js" />
+    <Content Include="node_modules\angular-material\modules\closure\toast\toast-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\closure\toast\toast-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\toast\toast.css" />
+    <Content Include="node_modules\angular-material\modules\closure\toast\toast.js" />
+    <Content Include="node_modules\angular-material\modules\closure\toast\toast.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\toast\toast.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\toolbar\toolbar-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\closure\toolbar\toolbar-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\toolbar\toolbar.css" />
+    <Content Include="node_modules\angular-material\modules\closure\toolbar\toolbar.js" />
+    <Content Include="node_modules\angular-material\modules\closure\toolbar\toolbar.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\toolbar\toolbar.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\tooltip\tooltip-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\closure\tooltip\tooltip-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\tooltip\tooltip.css" />
+    <Content Include="node_modules\angular-material\modules\closure\tooltip\tooltip.js" />
+    <Content Include="node_modules\angular-material\modules\closure\tooltip\tooltip.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\tooltip\tooltip.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\virtualRepeat\virtualRepeat.css" />
+    <Content Include="node_modules\angular-material\modules\closure\virtualRepeat\virtualRepeat.js" />
+    <Content Include="node_modules\angular-material\modules\closure\virtualRepeat\virtualRepeat.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\virtualRepeat\virtualRepeat.min.js" />
+    <Content Include="node_modules\angular-material\modules\closure\whiteframe\whiteframe.css" />
+    <Content Include="node_modules\angular-material\modules\closure\whiteframe\whiteframe.js" />
+    <Content Include="node_modules\angular-material\modules\closure\whiteframe\whiteframe.min.css" />
+    <Content Include="node_modules\angular-material\modules\closure\whiteframe\whiteframe.min.js" />
+    <Content Include="node_modules\angular-material\modules\css\angular-material-layout.css" />
+    <Content Include="node_modules\angular-material\modules\css\angular-material-layouts.css" />
+    <Content Include="node_modules\angular-material\modules\js\autocomplete\autocomplete-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\js\autocomplete\autocomplete-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\autocomplete\autocomplete.css" />
+    <Content Include="node_modules\angular-material\modules\js\autocomplete\autocomplete.js" />
+    <Content Include="node_modules\angular-material\modules\js\autocomplete\autocomplete.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\autocomplete\autocomplete.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\backdrop\backdrop-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\js\backdrop\backdrop-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\backdrop\backdrop.css" />
+    <Content Include="node_modules\angular-material\modules\js\backdrop\backdrop.js" />
+    <Content Include="node_modules\angular-material\modules\js\backdrop\backdrop.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\backdrop\backdrop.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\bottomSheet\bottomSheet-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\js\bottomSheet\bottomSheet-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\bottomSheet\bottomSheet.css" />
+    <Content Include="node_modules\angular-material\modules\js\bottomSheet\bottomSheet.js" />
+    <Content Include="node_modules\angular-material\modules\js\bottomSheet\bottomSheet.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\bottomSheet\bottomSheet.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\button\button-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\js\button\button-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\button\button.css" />
+    <Content Include="node_modules\angular-material\modules\js\button\button.js" />
+    <Content Include="node_modules\angular-material\modules\js\button\button.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\button\button.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\card\card-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\js\card\card-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\card\card.css" />
+    <Content Include="node_modules\angular-material\modules\js\card\card.js" />
+    <Content Include="node_modules\angular-material\modules\js\card\card.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\card\card.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\checkbox\checkbox-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\js\checkbox\checkbox-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\checkbox\checkbox.css" />
+    <Content Include="node_modules\angular-material\modules\js\checkbox\checkbox.js" />
+    <Content Include="node_modules\angular-material\modules\js\checkbox\checkbox.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\checkbox\checkbox.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\chips\chips-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\js\chips\chips-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\chips\chips.css" />
+    <Content Include="node_modules\angular-material\modules\js\chips\chips.js" />
+    <Content Include="node_modules\angular-material\modules\js\chips\chips.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\chips\chips.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\content\content-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\js\content\content-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\content\content.css" />
+    <Content Include="node_modules\angular-material\modules\js\content\content.js" />
+    <Content Include="node_modules\angular-material\modules\js\content\content.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\content\content.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\core\core.css" />
+    <Content Include="node_modules\angular-material\modules\js\core\core.js" />
+    <Content Include="node_modules\angular-material\modules\js\core\core.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\core\core.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\core\default-theme.js" />
+    <Content Include="node_modules\angular-material\modules\js\datepicker\datepicker-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\js\datepicker\datepicker-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\datepicker\datepicker.css" />
+    <Content Include="node_modules\angular-material\modules\js\datepicker\datepicker.js" />
+    <Content Include="node_modules\angular-material\modules\js\datepicker\datepicker.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\datepicker\datepicker.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\dialog\dialog-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\js\dialog\dialog-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\dialog\dialog.css" />
+    <Content Include="node_modules\angular-material\modules\js\dialog\dialog.js" />
+    <Content Include="node_modules\angular-material\modules\js\dialog\dialog.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\dialog\dialog.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\divider\divider-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\js\divider\divider-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\divider\divider.css" />
+    <Content Include="node_modules\angular-material\modules\js\divider\divider.js" />
+    <Content Include="node_modules\angular-material\modules\js\divider\divider.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\divider\divider.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\fabActions\fabActions.js" />
+    <Content Include="node_modules\angular-material\modules\js\fabActions\fabActions.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\fabSpeedDial\fabSpeedDial.css" />
+    <Content Include="node_modules\angular-material\modules\js\fabSpeedDial\fabSpeedDial.js" />
+    <Content Include="node_modules\angular-material\modules\js\fabSpeedDial\fabSpeedDial.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\fabSpeedDial\fabSpeedDial.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\fabToolbar\fabToolbar.css" />
+    <Content Include="node_modules\angular-material\modules\js\fabToolbar\fabToolbar.js" />
+    <Content Include="node_modules\angular-material\modules\js\fabToolbar\fabToolbar.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\fabToolbar\fabToolbar.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\fabTrigger\fabTrigger.js" />
+    <Content Include="node_modules\angular-material\modules\js\fabTrigger\fabTrigger.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\gridList\gridList.css" />
+    <Content Include="node_modules\angular-material\modules\js\gridList\gridList.js" />
+    <Content Include="node_modules\angular-material\modules\js\gridList\gridList.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\gridList\gridList.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\icon\icon-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\js\icon\icon-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\icon\icon.css" />
+    <Content Include="node_modules\angular-material\modules\js\icon\icon.js" />
+    <Content Include="node_modules\angular-material\modules\js\icon\icon.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\icon\icon.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\input\input-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\js\input\input-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\input\input.css" />
+    <Content Include="node_modules\angular-material\modules\js\input\input.js" />
+    <Content Include="node_modules\angular-material\modules\js\input\input.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\input\input.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\list\list-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\js\list\list-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\list\list.css" />
+    <Content Include="node_modules\angular-material\modules\js\list\list.js" />
+    <Content Include="node_modules\angular-material\modules\js\list\list.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\list\list.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\menuBar\menuBar-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\js\menuBar\menuBar-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\menuBar\menuBar.css" />
+    <Content Include="node_modules\angular-material\modules\js\menuBar\menuBar.js" />
+    <Content Include="node_modules\angular-material\modules\js\menuBar\menuBar.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\menuBar\menuBar.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\menu\menu-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\js\menu\menu-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\menu\menu.css" />
+    <Content Include="node_modules\angular-material\modules\js\menu\menu.js" />
+    <Content Include="node_modules\angular-material\modules\js\menu\menu.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\menu\menu.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\progressCircular\progressCircular-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\js\progressCircular\progressCircular-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\progressCircular\progressCircular.css" />
+    <Content Include="node_modules\angular-material\modules\js\progressCircular\progressCircular.js" />
+    <Content Include="node_modules\angular-material\modules\js\progressCircular\progressCircular.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\progressCircular\progressCircular.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\progressLinear\progressLinear-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\js\progressLinear\progressLinear-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\progressLinear\progressLinear.css" />
+    <Content Include="node_modules\angular-material\modules\js\progressLinear\progressLinear.js" />
+    <Content Include="node_modules\angular-material\modules\js\progressLinear\progressLinear.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\progressLinear\progressLinear.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\radioButton\radioButton-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\js\radioButton\radioButton-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\radioButton\radioButton.css" />
+    <Content Include="node_modules\angular-material\modules\js\radioButton\radioButton.js" />
+    <Content Include="node_modules\angular-material\modules\js\radioButton\radioButton.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\radioButton\radioButton.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\select\select-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\js\select\select-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\select\select.css" />
+    <Content Include="node_modules\angular-material\modules\js\select\select.js" />
+    <Content Include="node_modules\angular-material\modules\js\select\select.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\select\select.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\showHide\showHide.js" />
+    <Content Include="node_modules\angular-material\modules\js\showHide\showHide.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\sidenav\sidenav-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\js\sidenav\sidenav-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\sidenav\sidenav.css" />
+    <Content Include="node_modules\angular-material\modules\js\sidenav\sidenav.js" />
+    <Content Include="node_modules\angular-material\modules\js\sidenav\sidenav.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\sidenav\sidenav.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\slider\slider-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\js\slider\slider-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\slider\slider.css" />
+    <Content Include="node_modules\angular-material\modules\js\slider\slider.js" />
+    <Content Include="node_modules\angular-material\modules\js\slider\slider.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\slider\slider.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\sticky\sticky.css" />
+    <Content Include="node_modules\angular-material\modules\js\sticky\sticky.js" />
+    <Content Include="node_modules\angular-material\modules\js\sticky\sticky.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\sticky\sticky.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\subheader\subheader-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\js\subheader\subheader-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\subheader\subheader.css" />
+    <Content Include="node_modules\angular-material\modules\js\subheader\subheader.js" />
+    <Content Include="node_modules\angular-material\modules\js\subheader\subheader.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\subheader\subheader.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\swipe\swipe.js" />
+    <Content Include="node_modules\angular-material\modules\js\swipe\swipe.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\switch\switch-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\js\switch\switch-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\switch\switch.css" />
+    <Content Include="node_modules\angular-material\modules\js\switch\switch.js" />
+    <Content Include="node_modules\angular-material\modules\js\switch\switch.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\switch\switch.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\tabs\tabs-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\js\tabs\tabs-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\tabs\tabs.css" />
+    <Content Include="node_modules\angular-material\modules\js\tabs\tabs.js" />
+    <Content Include="node_modules\angular-material\modules\js\tabs\tabs.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\tabs\tabs.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\textField\textField-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\js\textField\textField-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\textField\textField.css" />
+    <Content Include="node_modules\angular-material\modules\js\textField\textField.js" />
+    <Content Include="node_modules\angular-material\modules\js\textField\textField.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\textField\textField.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\toast\toast-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\js\toast\toast-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\toast\toast.css" />
+    <Content Include="node_modules\angular-material\modules\js\toast\toast.js" />
+    <Content Include="node_modules\angular-material\modules\js\toast\toast.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\toast\toast.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\toolbar\toolbar-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\js\toolbar\toolbar-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\toolbar\toolbar.css" />
+    <Content Include="node_modules\angular-material\modules\js\toolbar\toolbar.js" />
+    <Content Include="node_modules\angular-material\modules\js\toolbar\toolbar.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\toolbar\toolbar.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\tooltip\tooltip-default-theme.css" />
+    <Content Include="node_modules\angular-material\modules\js\tooltip\tooltip-default-theme.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\tooltip\tooltip.css" />
+    <Content Include="node_modules\angular-material\modules\js\tooltip\tooltip.js" />
+    <Content Include="node_modules\angular-material\modules\js\tooltip\tooltip.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\tooltip\tooltip.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\virtualRepeat\virtualRepeat.css" />
+    <Content Include="node_modules\angular-material\modules\js\virtualRepeat\virtualRepeat.js" />
+    <Content Include="node_modules\angular-material\modules\js\virtualRepeat\virtualRepeat.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\virtualRepeat\virtualRepeat.min.js" />
+    <Content Include="node_modules\angular-material\modules\js\whiteframe\whiteframe.css" />
+    <Content Include="node_modules\angular-material\modules\js\whiteframe\whiteframe.js" />
+    <Content Include="node_modules\angular-material\modules\js\whiteframe\whiteframe.min.css" />
+    <Content Include="node_modules\angular-material\modules\js\whiteframe\whiteframe.min.js" />
+    <Content Include="node_modules\angular-messages\angular-messages.js" />
+    <Content Include="node_modules\angular-messages\angular-messages.min.js" />
+    <Content Include="node_modules\angular-messages\index.js" />
+    <Content Include="node_modules\angular-nvd3\dist\angular-nvd3.js" />
+    <Content Include="node_modules\angular-nvd3\dist\angular-nvd3.min.js" />
+    <Content Include="node_modules\angular-nvd3\Gruntfile.js" />
+    <Content Include="node_modules\angular-nvd3\index.js" />
+    <Content Include="node_modules\angular-nvd3\src\angular-nvd3.js" />
+    <Content Include="node_modules\angular-nvd3\test\angular-nvd3Spec.js" />
+    <Content Include="node_modules\angular-nvd3\test\karma.conf.js" />
+    <Content Include="node_modules\angular-resource\angular-resource.js" />
+    <Content Include="node_modules\angular-resource\angular-resource.min.js" />
+    <Content Include="node_modules\angular-resource\index.js" />
+    <Content Include="node_modules\angular-route\angular-route.js" />
+    <Content Include="node_modules\angular-route\angular-route.min.js" />
+    <Content Include="node_modules\angular-route\index.js" />
+    <Content Include="node_modules\angularjs\index.js" />
+    <Content Include="node_modules\angular\angular-csp.css" />
+    <Content Include="node_modules\angular\angular.js" />
+    <Content Include="node_modules\angular\angular.min.js" />
+    <Content Include="node_modules\angular\index.js" />
+    <Content Include="node_modules\d3\.gitattributes" />
+    <Content Include="node_modules\d3\d3.js" />
+    <Content Include="node_modules\d3\d3.min.js" />
+    <Content Include="node_modules\d3\package.js" />
+    <Content Include="node_modules\d3\src\arrays\ascending.js" />
+    <Content Include="node_modules\d3\src\arrays\bisect.js" />
+    <Content Include="node_modules\d3\src\arrays\descending.js" />
+    <Content Include="node_modules\d3\src\arrays\deviation.js" />
+    <Content Include="node_modules\d3\src\arrays\entries.js" />
+    <Content Include="node_modules\d3\src\arrays\extent.js" />
+    <Content Include="node_modules\d3\src\arrays\index.js" />
+    <Content Include="node_modules\d3\src\arrays\keys.js" />
+    <Content Include="node_modules\d3\src\arrays\map.js" />
+    <Content Include="node_modules\d3\src\arrays\max.js" />
+    <Content Include="node_modules\d3\src\arrays\mean.js" />
+    <Content Include="node_modules\d3\src\arrays\median.js" />
+    <Content Include="node_modules\d3\src\arrays\merge.js" />
+    <Content Include="node_modules\d3\src\arrays\min.js" />
+    <Content Include="node_modules\d3\src\arrays\nest.js" />
+    <Content Include="node_modules\d3\src\arrays\pairs.js" />
+    <Content Include="node_modules\d3\src\arrays\permute.js" />
+    <Content Include="node_modules\d3\src\arrays\quantile.js" />
+    <Content Include="node_modules\d3\src\arrays\range.js" />
+    <Content Include="node_modules\d3\src\arrays\set.js" />
+    <Content Include="node_modules\d3\src\arrays\shuffle.js" />
+    <Content Include="node_modules\d3\src\arrays\sum.js" />
+    <Content Include="node_modules\d3\src\arrays\transpose.js" />
+    <Content Include="node_modules\d3\src\arrays\values.js" />
+    <Content Include="node_modules\d3\src\arrays\variance.js" />
+    <Content Include="node_modules\d3\src\arrays\zip.js" />
+    <Content Include="node_modules\d3\src\behavior\behavior.js" />
+    <Content Include="node_modules\d3\src\behavior\drag.js" />
+    <Content Include="node_modules\d3\src\behavior\index.js" />
+    <Content Include="node_modules\d3\src\behavior\zoom.js" />
+    <Content Include="node_modules\d3\src\color\color.js" />
+    <Content Include="node_modules\d3\src\color\hcl.js" />
+    <Content Include="node_modules\d3\src\color\hsl.js" />
+    <Content Include="node_modules\d3\src\color\index.js" />
+    <Content Include="node_modules\d3\src\color\lab.js" />
+    <Content Include="node_modules\d3\src\color\rgb.js" />
+    <Content Include="node_modules\d3\src\color\xyz.js" />
+    <Content Include="node_modules\d3\src\compat\array.js" />
+    <Content Include="node_modules\d3\src\compat\date.js" />
+    <Content Include="node_modules\d3\src\compat\index.js" />
+    <Content Include="node_modules\d3\src\compat\style.js" />
+    <Content Include="node_modules\d3\src\core\array.js" />
+    <Content Include="node_modules\d3\src\core\class.js" />
+    <Content Include="node_modules\d3\src\core\document.js" />
+    <Content Include="node_modules\d3\src\core\functor.js" />
+    <Content Include="node_modules\d3\src\core\identity.js" />
+    <Content Include="node_modules\d3\src\core\index.js" />
+    <Content Include="node_modules\d3\src\core\noop.js" />
+    <Content Include="node_modules\d3\src\core\ns.js" />
+    <Content Include="node_modules\d3\src\core\rebind.js" />
+    <Content Include="node_modules\d3\src\core\source.js" />
+    <Content Include="node_modules\d3\src\core\subclass.js" />
+    <Content Include="node_modules\d3\src\core\target.js" />
+    <Content Include="node_modules\d3\src\core\true.js" />
+    <Content Include="node_modules\d3\src\core\vendor.js" />
+    <Content Include="node_modules\d3\src\core\zero.js" />
+    <Content Include="node_modules\d3\src\d3.js" />
+    <Content Include="node_modules\d3\src\dsv\csv.js" />
+    <Content Include="node_modules\d3\src\dsv\dsv.js" />
+    <Content Include="node_modules\d3\src\dsv\index.js" />
+    <Content Include="node_modules\d3\src\dsv\tsv.js" />
+    <Content Include="node_modules\d3\src\end.js" />
+    <Content Include="node_modules\d3\src\event\dispatch.js" />
+    <Content Include="node_modules\d3\src\event\drag.js" />
+    <Content Include="node_modules\d3\src\event\event.js" />
+    <Content Include="node_modules\d3\src\event\index.js" />
+    <Content Include="node_modules\d3\src\event\mouse.js" />
+    <Content Include="node_modules\d3\src\event\timer.js" />
+    <Content Include="node_modules\d3\src\event\touch.js" />
+    <Content Include="node_modules\d3\src\event\touches.js" />
+    <Content Include="node_modules\d3\src\format\collapse.js" />
+    <Content Include="node_modules\d3\src\format\format.js" />
+    <Content Include="node_modules\d3\src\format\formatPrefix.js" />
+    <Content Include="node_modules\d3\src\format\index.js" />
+    <Content Include="node_modules\d3\src\format\precision.js" />
+    <Content Include="node_modules\d3\src\format\requote.js" />
+    <Content Include="node_modules\d3\src\format\round.js" />
+    <Content Include="node_modules\d3\src\geom\clip-line.js" />
+    <Content Include="node_modules\d3\src\geom\delaunay.js" />
+    <Content Include="node_modules\d3\src\geom\geom.js" />
+    <Content Include="node_modules\d3\src\geom\hull.js" />
+    <Content Include="node_modules\d3\src\geom\index.js" />
+    <Content Include="node_modules\d3\src\geom\point.js" />
+    <Content Include="node_modules\d3\src\geom\polygon.js" />
+    <Content Include="node_modules\d3\src\geom\quadtree.js" />
+    <Content Include="node_modules\d3\src\geom\voronoi.js" />
+    <Content Include="node_modules\d3\src\geom\voronoi\beach.js" />
+    <Content Include="node_modules\d3\src\geom\voronoi\cell.js" />
+    <Content Include="node_modules\d3\src\geom\voronoi\circle.js" />
+    <Content Include="node_modules\d3\src\geom\voronoi\clip.js" />
+    <Content Include="node_modules\d3\src\geom\voronoi\edge.js" />
+    <Content Include="node_modules\d3\src\geom\voronoi\index.js" />
+    <Content Include="node_modules\d3\src\geom\voronoi\red-black.js" />
+    <Content Include="node_modules\d3\src\geo\albers-usa.js" />
+    <Content Include="node_modules\d3\src\geo\albers.js" />
+    <Content Include="node_modules\d3\src\geo\area.js" />
+    <Content Include="node_modules\d3\src\geo\azimuthal-equal-area.js" />
+    <Content Include="node_modules\d3\src\geo\azimuthal-equidistant.js" />
+    <Content Include="node_modules\d3\src\geo\azimuthal.js" />
+    <Content Include="node_modules\d3\src\geo\bounds.js" />
+    <Content Include="node_modules\d3\src\geo\cartesian.js" />
+    <Content Include="node_modules\d3\src\geo\centroid.js" />
+    <Content Include="node_modules\d3\src\geo\circle.js" />
+    <Content Include="node_modules\d3\src\geo\clip-antimeridian.js" />
+    <Content Include="node_modules\d3\src\geo\clip-circle.js" />
+    <Content Include="node_modules\d3\src\geo\clip-extent.js" />
+    <Content Include="node_modules\d3\src\geo\clip-polygon.js" />
+    <Content Include="node_modules\d3\src\geo\clip.js" />
+    <Content Include="node_modules\d3\src\geo\compose.js" />
+    <Content Include="node_modules\d3\src\geo\conic-conformal.js" />
+    <Content Include="node_modules\d3\src\geo\conic-equal-area.js" />
+    <Content Include="node_modules\d3\src\geo\conic-equidistant.js" />
+    <Content Include="node_modules\d3\src\geo\conic.js" />
+    <Content Include="node_modules\d3\src\geo\distance.js" />
+    <Content Include="node_modules\d3\src\geo\equirectangular.js" />
+    <Content Include="node_modules\d3\src\geo\geo.js" />
+    <Content Include="node_modules\d3\src\geo\gnomonic.js" />
+    <Content Include="node_modules\d3\src\geo\graticule.js" />
+    <Content Include="node_modules\d3\src\geo\greatArc.js" />
+    <Content Include="node_modules\d3\src\geo\index.js" />
+    <Content Include="node_modules\d3\src\geo\interpolate.js" />
+    <Content Include="node_modules\d3\src\geo\length.js" />
+    <Content Include="node_modules\d3\src\geo\mercator.js" />
+    <Content Include="node_modules\d3\src\geo\orthographic.js" />
+    <Content Include="node_modules\d3\src\geo\path-area.js" />
+    <Content Include="node_modules\d3\src\geo\path-bounds.js" />
+    <Content Include="node_modules\d3\src\geo\path-buffer.js" />
+    <Content Include="node_modules\d3\src\geo\path-centroid.js" />
+    <Content Include="node_modules\d3\src\geo\path-context.js" />
+    <Content Include="node_modules\d3\src\geo\path.js" />
+    <Content Include="node_modules\d3\src\geo\point-in-polygon.js" />
+    <Content Include="node_modules\d3\src\geo\projection.js" />
+    <Content Include="node_modules\d3\src\geo\resample.js" />
+    <Content Include="node_modules\d3\src\geo\rotation.js" />
+    <Content Include="node_modules\d3\src\geo\spherical.js" />
+    <Content Include="node_modules\d3\src\geo\stereographic.js" />
+    <Content Include="node_modules\d3\src\geo\stream.js" />
+    <Content Include="node_modules\d3\src\geo\transform.js" />
+    <Content Include="node_modules\d3\src\geo\transverse-mercator.js" />
+    <Content Include="node_modules\d3\src\interpolate\array.js" />
+    <Content Include="node_modules\d3\src\interpolate\ease.js" />
+    <Content Include="node_modules\d3\src\interpolate\hcl.js" />
+    <Content Include="node_modules\d3\src\interpolate\hsl.js" />
+    <Content Include="node_modules\d3\src\interpolate\index.js" />
+    <Content Include="node_modules\d3\src\interpolate\interpolate.js" />
+    <Content Include="node_modules\d3\src\interpolate\lab.js" />
+    <Content Include="node_modules\d3\src\interpolate\number.js" />
+    <Content Include="node_modules\d3\src\interpolate\object.js" />
+    <Content Include="node_modules\d3\src\interpolate\rgb.js" />
+    <Content Include="node_modules\d3\src\interpolate\round.js" />
+    <Content Include="node_modules\d3\src\interpolate\string.js" />
+    <Content Include="node_modules\d3\src\interpolate\transform.js" />
+    <Content Include="node_modules\d3\src\interpolate\uninterpolate.js" />
+    <Content Include="node_modules\d3\src\interpolate\zoom.js" />
+    <Content Include="node_modules\d3\src\layout\bundle.js" />
+    <Content Include="node_modules\d3\src\layout\chord.js" />
+    <Content Include="node_modules\d3\src\layout\cluster.js" />
+    <Content Include="node_modules\d3\src\layout\force.js" />
+    <Content Include="node_modules\d3\src\layout\hierarchy.js" />
+    <Content Include="node_modules\d3\src\layout\histogram.js" />
+    <Content Include="node_modules\d3\src\layout\index.js" />
+    <Content Include="node_modules\d3\src\layout\layout.js" />
+    <Content Include="node_modules\d3\src\layout\pack.js" />
+    <Content Include="node_modules\d3\src\layout\partition.js" />
+    <Content Include="node_modules\d3\src\layout\pie.js" />
+    <Content Include="node_modules\d3\src\layout\stack.js" />
+    <Content Include="node_modules\d3\src\layout\tree.js" />
+    <Content Include="node_modules\d3\src\layout\treemap.js" />
+    <Content Include="node_modules\d3\src\locale\ca-ES.js" />
+    <Content Include="node_modules\d3\src\locale\de-CH.js" />
+    <Content Include="node_modules\d3\src\locale\de-DE.js" />
+    <Content Include="node_modules\d3\src\locale\en-CA.js" />
+    <Content Include="node_modules\d3\src\locale\en-GB.js" />
+    <Content Include="node_modules\d3\src\locale\en-US.js" />
+    <Content Include="node_modules\d3\src\locale\es-ES.js" />
+    <Content Include="node_modules\d3\src\locale\fi-FI.js" />
+    <Content Include="node_modules\d3\src\locale\fr-CA.js" />
+    <Content Include="node_modules\d3\src\locale\fr-FR.js" />
+    <Content Include="node_modules\d3\src\locale\he-IL.js" />
+    <Content Include="node_modules\d3\src\locale\hu-HU.js" />
+    <Content Include="node_modules\d3\src\locale\it-IT.js" />
+    <Content Include="node_modules\d3\src\locale\ja-JP.js" />
+    <Content Include="node_modules\d3\src\locale\ko-KR.js" />
+    <Content Include="node_modules\d3\src\locale\locale.js" />
+    <Content Include="node_modules\d3\src\locale\mk-MK.js" />
+    <Content Include="node_modules\d3\src\locale\nl-NL.js" />
+    <Content Include="node_modules\d3\src\locale\number-format.js" />
+    <Content Include="node_modules\d3\src\locale\pl-PL.js" />
+    <Content Include="node_modules\d3\src\locale\pt-BR.js" />
+    <Content Include="node_modules\d3\src\locale\ru-RU.js" />
+    <Content Include="node_modules\d3\src\locale\sv-SE.js" />
+    <Content Include="node_modules\d3\src\locale\time-format.js" />
+    <Content Include="node_modules\d3\src\locale\time-scale.js" />
+    <Content Include="node_modules\d3\src\locale\zh-CN.js" />
+    <Content Include="node_modules\d3\src\math\abs.js" />
+    <Content Include="node_modules\d3\src\math\adder.js" />
+    <Content Include="node_modules\d3\src\math\index.js" />
+    <Content Include="node_modules\d3\src\math\number.js" />
+    <Content Include="node_modules\d3\src\math\random.js" />
+    <Content Include="node_modules\d3\src\math\transform.js" />
+    <Content Include="node_modules\d3\src\math\trigonometry.js" />
+    <Content Include="node_modules\d3\src\scale\bilinear.js" />
+    <Content Include="node_modules\d3\src\scale\category.js" />
+    <Content Include="node_modules\d3\src\scale\identity.js" />
+    <Content Include="node_modules\d3\src\scale\index.js" />
+    <Content Include="node_modules\d3\src\scale\linear.js" />
+    <Content Include="node_modules\d3\src\scale\log.js" />
+    <Content Include="node_modules\d3\src\scale\nice.js" />
+    <Content Include="node_modules\d3\src\scale\ordinal.js" />
+    <Content Include="node_modules\d3\src\scale\polylinear.js" />
+    <Content Include="node_modules\d3\src\scale\pow.js" />
+    <Content Include="node_modules\d3\src\scale\quantile.js" />
+    <Content Include="node_modules\d3\src\scale\quantize.js" />
+    <Content Include="node_modules\d3\src\scale\scale.js" />
+    <Content Include="node_modules\d3\src\scale\sqrt.js" />
+    <Content Include="node_modules\d3\src\scale\threshold.js" />
+    <Content Include="node_modules\d3\src\selection\append.js" />
+    <Content Include="node_modules\d3\src\selection\attr.js" />
+    <Content Include="node_modules\d3\src\selection\call.js" />
+    <Content Include="node_modules\d3\src\selection\classed.js" />
+    <Content Include="node_modules\d3\src\selection\data.js" />
+    <Content Include="node_modules\d3\src\selection\datum.js" />
+    <Content Include="node_modules\d3\src\selection\each.js" />
+    <Content Include="node_modules\d3\src\selection\empty.js" />
+    <Content Include="node_modules\d3\src\selection\enter-insert.js" />
+    <Content Include="node_modules\d3\src\selection\enter-select.js" />
+    <Content Include="node_modules\d3\src\selection\enter.js" />
+    <Content Include="node_modules\d3\src\selection\filter.js" />
+    <Content Include="node_modules\d3\src\selection\html.js" />
+    <Content Include="node_modules\d3\src\selection\index.js" />
+    <Content Include="node_modules\d3\src\selection\insert.js" />
+    <Content Include="node_modules\d3\src\selection\interrupt.js" />
+    <Content Include="node_modules\d3\src\selection\node.js" />
+    <Content Include="node_modules\d3\src\selection\on.js" />
+    <Content Include="node_modules\d3\src\selection\order.js" />
+    <Content Include="node_modules\d3\src\selection\property.js" />
+    <Content Include="node_modules\d3\src\selection\remove.js" />
+    <Content Include="node_modules\d3\src\selection\select.js" />
+    <Content Include="node_modules\d3\src\selection\selectAll.js" />
+    <Content Include="node_modules\d3\src\selection\selection.js" />
+    <Content Include="node_modules\d3\src\selection\size.js" />
+    <Content Include="node_modules\d3\src\selection\sort.js" />
+    <Content Include="node_modules\d3\src\selection\style.js" />
+    <Content Include="node_modules\d3\src\selection\text.js" />
+    <Content Include="node_modules\d3\src\selection\transition.js" />
+    <Content Include="node_modules\d3\src\start.js" />
+    <Content Include="node_modules\d3\src\svg\arc.js" />
+    <Content Include="node_modules\d3\src\svg\area-radial.js" />
+    <Content Include="node_modules\d3\src\svg\area.js" />
+    <Content Include="node_modules\d3\src\svg\axis.js" />
+    <Content Include="node_modules\d3\src\svg\brush.js" />
+    <Content Include="node_modules\d3\src\svg\chord.js" />
+    <Content Include="node_modules\d3\src\svg\diagonal-radial.js" />
+    <Content Include="node_modules\d3\src\svg\diagonal.js" />
+    <Content Include="node_modules\d3\src\svg\index.js" />
+    <Content Include="node_modules\d3\src\svg\line-radial.js" />
+    <Content Include="node_modules\d3\src\svg\line.js" />
+    <Content Include="node_modules\d3\src\svg\svg.js" />
+    <Content Include="node_modules\d3\src\svg\symbol.js" />
+    <Content Include="node_modules\d3\src\time\day.js" />
+    <Content Include="node_modules\d3\src\time\format-iso.js" />
+    <Content Include="node_modules\d3\src\time\format-utc.js" />
+    <Content Include="node_modules\d3\src\time\format.js" />
+    <Content Include="node_modules\d3\src\time\hour.js" />
+    <Content Include="node_modules\d3\src\time\index.js" />
+    <Content Include="node_modules\d3\src\time\interval.js" />
+    <Content Include="node_modules\d3\src\time\minute.js" />
+    <Content Include="node_modules\d3\src\time\month.js" />
+    <Content Include="node_modules\d3\src\time\scale-utc.js" />
+    <Content Include="node_modules\d3\src\time\scale.js" />
+    <Content Include="node_modules\d3\src\time\second.js" />
+    <Content Include="node_modules\d3\src\time\time.js" />
+    <Content Include="node_modules\d3\src\time\week.js" />
+    <Content Include="node_modules\d3\src\time\year.js" />
+    <Content Include="node_modules\d3\src\transition\attr.js" />
+    <Content Include="node_modules\d3\src\transition\delay.js" />
+    <Content Include="node_modules\d3\src\transition\duration.js" />
+    <Content Include="node_modules\d3\src\transition\each.js" />
+    <Content Include="node_modules\d3\src\transition\ease.js" />
+    <Content Include="node_modules\d3\src\transition\filter.js" />
+    <Content Include="node_modules\d3\src\transition\index.js" />
+    <Content Include="node_modules\d3\src\transition\remove.js" />
+    <Content Include="node_modules\d3\src\transition\select.js" />
+    <Content Include="node_modules\d3\src\transition\selectAll.js" />
+    <Content Include="node_modules\d3\src\transition\style.js" />
+    <Content Include="node_modules\d3\src\transition\subtransition.js" />
+    <Content Include="node_modules\d3\src\transition\text.js" />
+    <Content Include="node_modules\d3\src\transition\transition.js" />
+    <Content Include="node_modules\d3\src\transition\tween.js" />
+    <Content Include="node_modules\d3\src\xhr\html.js" />
+    <Content Include="node_modules\d3\src\xhr\index.js" />
+    <Content Include="node_modules\d3\src\xhr\json.js" />
+    <Content Include="node_modules\d3\src\xhr\text.js" />
+    <Content Include="node_modules\d3\src\xhr\xhr.js" />
+    <Content Include="node_modules\d3\src\xhr\xml.js" />
+    <Content Include="node_modules\nvd3\build\nv.d3.css" />
+    <Content Include="node_modules\nvd3\build\nv.d3.js" />
+    <Content Include="node_modules\nvd3\build\nv.d3.min.css" />
+    <Content Include="node_modules\nvd3\build\nv.d3.min.js" />
+    <Content Include="node_modules\nvd3\examples\boxPlot.html" />
+    <Content Include="node_modules\nvd3\examples\bullet.html" />
+    <Content Include="node_modules\nvd3\examples\bulletChart.html" />
+    <Content Include="node_modules\nvd3\examples\candlestick.html" />
+    <Content Include="node_modules\nvd3\examples\candlestickChart.html" />
+    <Content Include="node_modules\nvd3\examples\cumulativeLineChart.html" />
+    <Content Include="node_modules\nvd3\examples\discreteBarChart.html" />
+    <Content Include="node_modules\nvd3\examples\documentation.html" />
+    <Content Include="node_modules\nvd3\examples\donutChart.html" />
+    <Content Include="node_modules\nvd3\examples\furiousLegend.html" />
+    <Content Include="node_modules\nvd3\examples\historicalBar.html" />
+    <Content Include="node_modules\nvd3\examples\historicalBarChart.html" />
+    <Content Include="node_modules\nvd3\examples\images\background.png" />
+    <Content Include="node_modules\nvd3\examples\images\body-background.png" />
+    <Content Include="node_modules\nvd3\examples\images\bullet.png" />
+    <Content Include="node_modules\nvd3\examples\images\hr.png" />
+    <Content Include="node_modules\nvd3\examples\images\octocat-logo.png" />
+    <Content Include="node_modules\nvd3\examples\index.html" />
+    <Content Include="node_modules\nvd3\examples\legend.html" />
+    <Content Include="node_modules\nvd3\examples\lib\colorbrewer.js" />
+    <Content Include="node_modules\nvd3\examples\lib\stream_layers.js" />
+    <Content Include="node_modules\nvd3\examples\line.html" />
+    <Content Include="node_modules\nvd3\examples\lineChart.html" />
+    <Content Include="node_modules\nvd3\examples\lineChartLogScale.html" />
+    <Content Include="node_modules\nvd3\examples\lineChartSVGResize.html" />
+    <Content Include="node_modules\nvd3\examples\linePlusBarChart.html" />
+    <Content Include="node_modules\nvd3\examples\lineWithFocusChart.html" />
+    <Content Include="node_modules\nvd3\examples\lineWithFocusChart_x2AxisLabel.html" />
+    <Content Include="node_modules\nvd3\examples\monitoringChart.html" />
+    <Content Include="node_modules\nvd3\examples\multiBarChart.html" />
+    <Content Include="node_modules\nvd3\examples\multiBarChart2.html" />
+    <Content Include="node_modules\nvd3\examples\multiBarHorizontalChart.html" />
+    <Content Include="node_modules\nvd3\examples\multiChart.html" />
+    <Content Include="node_modules\nvd3\examples\ohlc.html" />
+    <Content Include="node_modules\nvd3\examples\ohlcChart.html" />
+    <Content Include="node_modules\nvd3\examples\parallelCoordinates.html" />
+    <Content Include="node_modules\nvd3\examples\parallelCoordinatesChart.html" />
+    <Content Include="node_modules\nvd3\examples\pie.html" />
+    <Content Include="node_modules\nvd3\examples\pieChart.html" />
+    <Content Include="node_modules\nvd3\examples\scatter.html" />
+    <Content Include="node_modules\nvd3\examples\scatterChart.html" />
+    <Content Include="node_modules\nvd3\examples\scatterPlusLineChart.html" />
+    <Content Include="node_modules\nvd3\examples\site.html" />
+    <Content Include="node_modules\nvd3\examples\sparkline.html" />
+    <Content Include="node_modules\nvd3\examples\sparklinePlus.html" />
+    <Content Include="node_modules\nvd3\examples\stackedArea.html" />
+    <Content Include="node_modules\nvd3\examples\stackedAreaChart.html" />
+    <Content Include="node_modules\nvd3\examples\stylesheets\pygment_trac.css" />
+    <Content Include="node_modules\nvd3\examples\stylesheets\styles.css" />
+    <Content Include="node_modules\nvd3\examples\sunburst.html" />
+    <Content Include="node_modules\nvd3\examples\TimeSeries.html" />
+    <Content Include="node_modules\nvd3\examples\tooltip.html" />
+    <Content Include="node_modules\nvd3\GruntFile.js" />
+    <Content Include="node_modules\nvd3\index.html" />
+    <Content Include="node_modules\nvd3\meteor\export.js" />
+    <Content Include="node_modules\nvd3\package.js" />
+    <Content Include="node_modules\nvd3\src\core.js" />
+    <Content Include="node_modules\nvd3\src\css\axis.css" />
+    <Content Include="node_modules\nvd3\src\css\bars.css" />
+    <Content Include="node_modules\nvd3\src\css\boxplot.css" />
+    <Content Include="node_modules\nvd3\src\css\bullet.css" />
+    <Content Include="node_modules\nvd3\src\css\candlestick.css" />
+    <Content Include="node_modules\nvd3\src\css\furiousLegend.css" />
+    <Content Include="node_modules\nvd3\src\css\lineplusbar.css" />
+    <Content Include="node_modules\nvd3\src\css\lines.css" />
+    <Content Include="node_modules\nvd3\src\css\main.css" />
+    <Content Include="node_modules\nvd3\src\css\ohlc.css" />
+    <Content Include="node_modules\nvd3\src\css\parallelcoordinates.css" />
+    <Content Include="node_modules\nvd3\src\css\pie.css" />
+    <Content Include="node_modules\nvd3\src\css\scatter.css" />
+    <Content Include="node_modules\nvd3\src\css\sparkline.css" />
+    <Content Include="node_modules\nvd3\src\css\stackedarea.css" />
+    <Content Include="node_modules\nvd3\src\css\tooltip.css" />
+    <Content Include="node_modules\nvd3\src\dom.js" />
+    <Content Include="node_modules\nvd3\src\interactiveLayer.js" />
+    <Content Include="node_modules\nvd3\src\models\axis.js" />
+    <Content Include="node_modules\nvd3\src\models\boxPlot.js" />
+    <Content Include="node_modules\nvd3\src\models\boxPlotChart.js" />
+    <Content Include="node_modules\nvd3\src\models\bullet.js" />
+    <Content Include="node_modules\nvd3\src\models\bulletChart.js" />
+    <Content Include="node_modules\nvd3\src\models\candlestickBar.js" />
+    <Content Include="node_modules\nvd3\src\models\cumulativeLineChart.js" />
+    <Content Include="node_modules\nvd3\src\models\discreteBar.js" />
+    <Content Include="node_modules\nvd3\src\models\discreteBarChart.js" />
+    <Content Include="node_modules\nvd3\src\models\distribution.js" />
+    <Content Include="node_modules\nvd3\src\models\furiousLegend.js" />
+    <Content Include="node_modules\nvd3\src\models\historicalBar.js" />
+    <Content Include="node_modules\nvd3\src\models\historicalBarChart.js" />
+    <Content Include="node_modules\nvd3\src\models\legend.js" />
+    <Content Include="node_modules\nvd3\src\models\line.js" />
+    <Content Include="node_modules\nvd3\src\models\lineChart.js" />
+    <Content Include="node_modules\nvd3\src\models\linePlusBarChart.js" />
+    <Content Include="node_modules\nvd3\src\models\multiBar.js" />
+    <Content Include="node_modules\nvd3\src\models\multiBarChart.js" />
+    <Content Include="node_modules\nvd3\src\models\multiBarHorizontal.js" />
+    <Content Include="node_modules\nvd3\src\models\multiBarHorizontalChart.js" />
+    <Content Include="node_modules\nvd3\src\models\multiChart.js" />
+    <Content Include="node_modules\nvd3\src\models\ohlcBar.js" />
+    <Content Include="node_modules\nvd3\src\models\parallelCoordinates.js" />
+    <Content Include="node_modules\nvd3\src\models\parallelCoordinatesChart.js" />
+    <Content Include="node_modules\nvd3\src\models\pie.js" />
+    <Content Include="node_modules\nvd3\src\models\pieChart.js" />
+    <Content Include="node_modules\nvd3\src\models\scatter.js" />
+    <Content Include="node_modules\nvd3\src\models\scatterChart.js" />
+    <Content Include="node_modules\nvd3\src\models\sparkline.js" />
+    <Content Include="node_modules\nvd3\src\models\sparklinePlus.js" />
+    <Content Include="node_modules\nvd3\src\models\stackedArea.js" />
+    <Content Include="node_modules\nvd3\src\models\stackedAreaChart.js" />
+    <Content Include="node_modules\nvd3\src\models\sunburst.js" />
+    <Content Include="node_modules\nvd3\src\models\sunburstChart.js" />
+    <Content Include="node_modules\nvd3\src\tooltip.js" />
+    <Content Include="node_modules\nvd3\src\utils.js" />
+    <Content Include="node_modules\nvd3\test\boxPlotTest.html" />
+    <Content Include="node_modules\nvd3\test\cumulativeLineChart.html" />
+    <Content Include="node_modules\nvd3\test\lineChartTest.html" />
+    <Content Include="node_modules\nvd3\test\linePlusBarChart.html" />
+    <Content Include="node_modules\nvd3\test\linePlusBarWithFocusChart.html" />
+    <Content Include="node_modules\nvd3\test\lineWithFisheyeChart.html" />
+    <Content Include="node_modules\nvd3\test\lineWithFocusChart.html" />
+    <Content Include="node_modules\nvd3\test\lineWithFocusChartMissingData.html" />
+    <Content Include="node_modules\nvd3\test\multiBarChartTest.html" />
+    <Content Include="node_modules\nvd3\test\multiBarHorizontalChart.html" />
+    <Content Include="node_modules\nvd3\test\node\GruntFile.js" />
+    <Content Include="node_modules\nvd3\test\node\nodeTest.html" />
+    <Content Include="node_modules\nvd3\test\node\nodeTest.js" />
+    <Content Include="node_modules\nvd3\test\pieChartTest.html" />
+    <Content Include="node_modules\nvd3\test\polylinearTest.html" />
+    <Content Include="node_modules\nvd3\test\realTimeChartTest.html" />
+    <Content Include="node_modules\nvd3\test\ScatterChartTest.html" />
+    <Content Include="node_modules\nvd3\test\scatterPlusLineChart.html" />
+    <Content Include="node_modules\nvd3\test\scrollTest.html" />
+    <Content Include="node_modules\nvd3\test\scrollTest2.html" />
+    <Content Include="node_modules\nvd3\test\stackedAreaChartMissingData.html" />
+    <Content Include="node_modules\nvd3\test\stackedAreaChartTest.html" />
+    <Content Include="node_modules\nvd3\test\stream_layers.js" />
+    <Content Include="node_modules\nvd3\test\testScript.js" />
+    <Content Include="node_modules\nvd3\test\teststyle.css" />
+    <Content Include="node_modules\nvd3\test\tinytest\nv-is-defined-test.js" />
+    <Content Include="Scripts\ai.0.15.0-build58334.js" />
+    <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="package.json" />
+    <Content Include="node_modules\angular-animate\angular-animate.min.js.map" />
+    <Content Include="node_modules\angular-animate\bower.json" />
+    <Content Include="node_modules\angular-animate\package.json" />
+    <Content Include="node_modules\angular-animate\README.md" />
+    <Content Include="node_modules\angular-aria\angular-aria.min.js.map" />
+    <Content Include="node_modules\angular-aria\bower.json" />
+    <Content Include="node_modules\angular-aria\package.json" />
+    <Content Include="node_modules\angular-aria\README.md" />
+    <Content Include="node_modules\angular-material\.npmignore" />
+    <Content Include="node_modules\angular-material\angular-material.scss" />
+    <Content Include="node_modules\angular-material\bower.json" />
+    <Content Include="node_modules\angular-material\CHANGELOG.md" />
+    <Content Include="node_modules\angular-material\demos\chips\demoBasicUsage\style.scss" />
+    <Content Include="node_modules\angular-material\demos\chips\demoContactChips\style.scss" />
+    <Content Include="node_modules\angular-material\demos\gridList\demoBasicUsage\style.scss" />
+    <Content Include="node_modules\angular-material\demos\gridList\demoDynamicTiles\style.scss" />
+    <Content Include="node_modules\angular-material\demos\gridList\demoResponsiveUsage\style.scss" />
+    <Content Include="node_modules\angular-material\demos\input\demoIcons\style.scss" />
+    <Content Include="node_modules\angular-material\demos\tabs\demoDynamicHeight\style.scss" />
+    <Content Include="node_modules\angular-material\demos\tabs\demoDynamicTabs\style.scss" />
+    <Content Include="node_modules\angular-material\demos\tabs\demoStaticTabs\style.scss" />
+    <Content Include="node_modules\angular-material\layouts\angular-material.layout-attributes.scss" />
+    <Content Include="node_modules\angular-material\layouts\angular-material.layouts.scss" />
+    <Content Include="node_modules\angular-material\LICENSE" />
+    <Content Include="node_modules\angular-material\modules\js\autocomplete\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\backdrop\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\bottomSheet\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\button\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\card\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\checkbox\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\chips\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\content\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\core\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\datepicker\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\dialog\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\divider\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\fabActions\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\fabSpeedDial\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\fabToolbar\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\fabTrigger\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\gridList\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\icon\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\input\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\list\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\menuBar\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\menu\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\progressCircular\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\progressLinear\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\radioButton\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\select\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\showHide\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\sidenav\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\slider\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\sticky\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\subheader\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\swipe\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\switch\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\tabs\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\textField\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\toast\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\toolbar\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\tooltip\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\virtualRepeat\bower.json" />
+    <Content Include="node_modules\angular-material\modules\js\whiteframe\bower.json" />
+    <Content Include="node_modules\angular-material\package.json" />
+    <Content Include="node_modules\angular-material\README.md" />
+    <Content Include="node_modules\angular-messages\angular-messages.min.js.map" />
+    <Content Include="node_modules\angular-messages\bower.json" />
+    <Content Include="node_modules\angular-messages\package.json" />
+    <Content Include="node_modules\angular-messages\README.md" />
+    <Content Include="node_modules\angularjs\.npmignore" />
+    <Content Include="node_modules\angularjs\package.json" />
+    <Content Include="node_modules\angularjs\README.md" />
+    <Content Include="node_modules\angular\angular.min.js.gzip" />
+    <Content Include="node_modules\angular\angular.min.js.map" />
+    <Content Include="node_modules\angular\bower.json" />
+    <Content Include="node_modules\angular\package.json" />
+    <Content Include="node_modules\angular\README.md" />
+    <Content Include="node_modules\d3\.npmignore" />
+    <Content Include="node_modules\d3\.spmignore" />
+    <Content Include="node_modules\d3\bin\meteor" />
+    <Content Include="node_modules\d3\bin\start" />
+    <Content Include="node_modules\d3\bin\uglify" />
+    <Content Include="node_modules\d3\composer.json" />
+    <Content Include="node_modules\d3\CONTRIBUTING.md" />
+    <Content Include="node_modules\d3\LICENSE" />
+    <Content Include="node_modules\d3\package.json" />
+    <Content Include="node_modules\d3\README.md" />
+    <Content Include="node_modules\nvd3\.jshintrc" />
+    <Content Include="node_modules\nvd3\.npmignore" />
+    <Content Include="node_modules\nvd3\.travis.yml" />
+    <Content Include="node_modules\nvd3\bower.json" />
+    <Content Include="node_modules\nvd3\build\nv.d3.min.css.map" />
+    <Content Include="node_modules\nvd3\build\nv.d3.min.js.map" />
+    <Content Include="node_modules\nvd3\composer.json" />
+    <Content Include="node_modules\nvd3\LICENSE.md" />
+    <Content Include="node_modules\nvd3\package.json" />
+    <Content Include="node_modules\nvd3\README.md" />
+    <Content Include="node_modules\nvd3\test\mocha\axis.coffee" />
+    <Content Include="node_modules\nvd3\test\mocha\boxplot.coffee" />
+    <Content Include="node_modules\nvd3\test\mocha\bullet.coffee" />
+    <Content Include="node_modules\nvd3\test\mocha\core.coffee" />
+    <Content Include="node_modules\nvd3\test\mocha\cumulative-line.coffee" />
+    <Content Include="node_modules\nvd3\test\mocha\discretebar.coffee" />
+    <Content Include="node_modules\nvd3\test\mocha\historical-bar.coffee" />
+    <Content Include="node_modules\nvd3\test\mocha\legend.coffee" />
+    <Content Include="node_modules\nvd3\test\mocha\line.coffee" />
+    <Content Include="node_modules\nvd3\test\mocha\multibar-horizontal.coffee" />
+    <Content Include="node_modules\nvd3\test\mocha\multibar.coffee" />
+    <Content Include="node_modules\nvd3\test\mocha\pie.coffee" />
+    <Content Include="node_modules\nvd3\test\mocha\scatter.coffee" />
+    <Content Include="node_modules\nvd3\test\mocha\sparkline.coffee" />
+    <Content Include="node_modules\nvd3\test\mocha\stacked.coffee" />
+    <Content Include="node_modules\nvd3\test\mocha\sunburst.coffee" />
+    <Content Include="node_modules\nvd3\test\mocha\test-utils.coffee" />
+    <Content Include="node_modules\nvd3\test\mocha\utils.coffee" />
+    <Content Include="node_modules\nvd3\test\node\package.json" />
+    <Content Include="node_modules\nvd3\test\node\README.md" />
+    <Content Include="node_modules\angular-nvd3\.jshintrc" />
+    <Content Include="node_modules\angular-nvd3\.npmignore" />
+    <Content Include="node_modules\angular-nvd3\.travis.yml" />
+    <Content Include="node_modules\angular-nvd3\bower.json" />
+    <Content Include="node_modules\angular-nvd3\LICENSE" />
+    <Content Include="node_modules\angular-nvd3\package.json" />
+    <Content Include="node_modules\angular-nvd3\README.md" />
+    <Content Include="node_modules\angular-route\angular-route.min.js.map" />
+    <Content Include="node_modules\angular-route\bower.json" />
+    <Content Include="node_modules\angular-route\package.json" />
+    <Content Include="node_modules\angular-route\README.md" />
+    <Content Include="node_modules\angular-resource\angular-resource.min.js.map" />
+    <Content Include="node_modules\angular-resource\bower.json" />
+    <Content Include="node_modules\angular-resource\package.json" />
+    <Content Include="node_modules\angular-resource\README.md" />
+    <None Include="Properties\PublishProfiles\MarkGuttman.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53803</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53803/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
